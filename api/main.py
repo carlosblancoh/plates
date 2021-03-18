@@ -11,7 +11,7 @@ def read_plate():
         return 'No se ha seleccionado un archivo válido.', 400
     file = request.plate['file']
 
-    if file.filename == ''
+    if file.filename == '':
         return 'No se ha seleccionado un archivo válido.', 400
     content = file.stream.read()
     return content
