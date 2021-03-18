@@ -12,6 +12,7 @@ app = Flask(__name__)
 UPLOAD_PATH = '/home/ubuntu/files'
 
 cfg = get_cfg()
+cfg.MODEL.DEVICE = 'cpu'
 cfg.merge_from_file(model_zoo.get_config_file("COCO-Detection/faster_rcnn_R_50_FPN_1x.yaml"))
 cfg.DATALOADER.NUM_WORKERS = 2
 #COCO-Detection/faster_rcnn_R_50_FPN_1x/137257794/model_final_b275ba.pkl
