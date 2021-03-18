@@ -41,7 +41,8 @@ def read_plate():
         return 'No se ha seleccionado un archivo válido.', 400
 
     content = np.asarray(bytearray(file.stream.read()))
-    img = cv2.imdecode(content, 0)
+    img = cv2.imdecode(content, cv2.IMREAD_COLOR)
+    print(img.shape)
     output = predictor(img)
 
     platePoints = np.array(output["instances"].to("cpu").get("pred_boxes").tensor)
