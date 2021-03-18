@@ -7,9 +7,9 @@ UPLOAD_PATH = '/home/ubuntu/files'
 @app.route('/', methods = ['POST'])
 def read_plate():
 
-    if 'file' not in request.plate:
+    if 'plate' not in request.files:
         return 'No se ha seleccionado un archivo válido.', 400
-    file = request.plate['file']
+    file = request.files['plate']
 
     if file.filename == '':
         return 'No se ha seleccionado un archivo válido.', 400
